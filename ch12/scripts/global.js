@@ -364,10 +364,10 @@ function submitFormWithAjax(whichform,thetarget){
     }
     var data=dataParts.join('&');
     request.open('POST',whichform.getAttribute("action"),true);
-    request.setRequestHeader("Content-Type", 'application / x - www - form - urlencoded' );
+    request.setRequestHeader("Content-Type", "application / x - www - form - urlencoded" );
     request.onreadystatechange=function(){
         if(request.readyState==4&&this.status==200){
-            var matches=request.responseText.match(/<artical>([/s/S]+)<\/artical>/);
+            var matches=request.responseText.match(/<article>([\s\S]+)<\/article>/);
             if(matches.length>0){
                 thetarget.innerHTML=matches[1];
             }else{
